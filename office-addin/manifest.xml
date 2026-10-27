@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xsi:type="TaskPaneApp">
+  <Id>2f9e8e44-596d-43c5-85da-b0f3e4ad6b61</Id>
+  <Version>0.1.0.0</Version>
+  <ProviderName>Omni Assistant</ProviderName>
+  <DefaultLocale>id-ID</DefaultLocale>
+  <DisplayName DefaultValue="Omni Assistant" />
+  <Description DefaultValue="Panel AI lokal untuk Word, Excel, PowerPoint, Project, dan Outlook." />
+  <IconUrl DefaultValue="http://localhost:17878/office/assets/icon.svg" />
+  <HighResolutionIconUrl DefaultValue="http://localhost:17878/office/assets/icon.svg" />
+  <SupportUrl DefaultValue="http://localhost:17878/api/health" />
+  <AppDomains>
+    <AppDomain>http://localhost:17878</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document" />
+    <Host Name="Workbook" />
+    <Host Name="Presentation" />
+    <Host Name="Project" />
+    <Host Name="Mailbox" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="http://localhost:17878/office/taskpane.html" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>

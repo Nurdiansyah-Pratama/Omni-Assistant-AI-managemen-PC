@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Omni Assistant</title>
+    <link rel="stylesheet" href="./taskpane.css" />
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Omni Office Assistant</p>
+          <h1>Omni Assistant</h1>
+        </div>
+        <button id="settingsButton" class="ghost" type="button">Settings</button>
+      </header>
+
+      <section class="status-card">
+        <div>
+          <span class="label">Detected App</span>
+          <strong id="detectedApp">Loading...</strong>
+        </div>
+        <div>
+          <span class="label">Backend</span>
+          <strong id="backendStatus">Checking...</strong>
+        </div>
+      </section>
+
+      <section class="notice">
+        Omni tidak mengubah dokumen otomatis. Gunakan Preview, lalu klik Insert
+        atau Replace Selection jika sudah setuju.
+      </section>
+
+      <label class="field">
+        <span>Prompt / instruksi</span>
+        <textarea id="promptInput" rows="4" placeholder="Contoh: ringkas bagian ini menjadi poin akademik..."></textarea>
+      </label>
+
+      <label class="field">
+        <span>Tone</span>
+        <select id="toneSelect">
+          <option value="">Default</option>
+          <option value="professional">Professional</option>
+          <option value="academic">Academic</option>
+          <option value="formal">Formal</option>
+          <option value="casual">Non-formal</option>
+        </select>
+      </label>
+
+      <label class="checkbox">
+        <input id="allowDocumentContext" type="checkbox" />
+        Izinkan Omni membaca excerpt dokumen aktif
+      </label>
+
+      <section class="actions" aria-label="Aksi umum">
+        <button data-action="chat">Ask Omni</button>
+        <button data-action="rewrite">Rewrite</button>
+        <button data-action="summarize">Summarize</button>
+        <button data-action="explain">Explain</button>
+        <button data-action="generate">Generate</button>
+        <button data-action="format">Format</button>
+        <button data-action="grammar">Fix Grammar</button>
+        <button data-action="translate">Translate</button>
+        <button data-action="professional">Make Professional</button>
+        <button data-action="academic">Make Academic</button>
+        <button data-action="continue">Continue Writing</button>
+      </section>
+
+      <section class="actions special" id="specialActions"></section>
+
+      <section class="preview">
+        <div class="preview-header">
+          <strong>Preview output</strong>
+          <span id="lastAction">Belum ada aksi</span>
+        </div>
+        <textarea id="previewOutput" rows="9" placeholder="Hasil Omni muncul di sini..." readonly></textarea>
+      </section>
+
+      <section class="footer-actions">
+        <button id="insertButton" type="button">Insert</button>
+        <button id="replaceButton" type="button">Replace Selection</button>
+        <button id="copyButton" type="button">Copy</button>
+      </section>
+
+      <p id="message" class="message"></p>
+    </main>
+
+    <script src="./api_client.js"></script>
+    <script src="./office_context.js"></script>
+    <script src="./word_actions.js"></script>
+    <script src="./excel_actions.js"></script>
+    <script src="./powerpoint_actions.js"></script>
+    <script src="./project_actions.js"></script>
+    <script src="./outlook_actions.js"></script>
+    <script src="./taskpane.js"></script>
+  </body>
+</html>

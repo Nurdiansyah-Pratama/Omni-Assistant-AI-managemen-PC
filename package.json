@@ -1,0 +1,39 @@
+{
+  "name": "omni-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fondasi desktop virtual assistant dengan Electron, React, dan Tailwind CSS.",
+  "main": "dist-electron/main.js",
+  "browserslist": {
+    "production": [
+      "Chrome 148"
+    ],
+    "development": [
+      "Chrome 148"
+    ]
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:admin": "node scripts/run-admin.mjs dev",
+    "build": "tsc && vite build && tsc -p electron/tsconfig.json",
+    "start": "electron .",
+    "start:admin": "node scripts/run-admin.mjs start",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^6.0.2",
+    "autoprefixer": "^10.4.21",
+    "electron": "^42.4.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.3",
+    "vite": "^8.0.16"
+  }
+}

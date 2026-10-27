@@ -1,0 +1,17 @@
+{
+  "vscode-edge-devtools.webhint": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "files.exclude": {
+    "**/dist": true,
+    "**/dist-electron": true
+  },
+  "files.watcherExclude": {
+    "**/dist/**": true,
+    "**/dist-electron/**": true
+  },
+  "search.exclude": {
+    "**/dist/**": true,
+    "**/dist-electron/**": true
+  }
+}

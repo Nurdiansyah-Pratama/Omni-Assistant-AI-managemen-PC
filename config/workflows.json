@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Office Productivity Workflow",
+    "trigger": { "detectedActivity": "Office Productivity" },
+    "conditions": { "ramUsageGreaterThan": 75 },
+    "actions": ["showNotification"],
+    "cooldownSeconds": 300,
+    "notification": "Office Productivity aktif. Dokumen tidak akan diubah otomatis tanpa konfirmasi."
+  },
+  {
+    "name": "Heavy Office Workload Workflow",
+    "trigger": { "detectedActivity": "Heavy Office Workload" },
+    "conditions": { "ramUsageGreaterThan": 85 },
+    "actions": ["freeMemorySafe", "showNotification"],
+    "cooldownSeconds": 300,
+    "notification": "Office berat terdeteksi. Omni menjalankan cleanup aman bila dry-run nonaktif."
+  },
+  {
+    "name": "Unity Development Workflow",
+    "trigger": { "detectedActivity": "Unity Development" },
+    "conditions": { "ramUsageGreaterThan": 85 },
+    "actions": ["setFanPerformance", "setSSDBalanced", "freeMemorySafe", "showNotification"],
+    "cooldownSeconds": 300,
+    "notification": "Unity Development Mode aktif. RAM tinggi, Omni menjalankan aksi aman sesuai konfigurasi."
+  },
+  {
+    "name": "Laravel Development Workflow",
+    "trigger": { "activeProcessesAll": ["Code"], "detectedActivity": "Laravel Development" },
+    "conditions": { "ramUsageGreaterThan": 75 },
+    "actions": ["showNotification"],
+    "cooldownSeconds": 300,
+    "notification": "Laravel Development profile aktif. Browser tidak akan ditutup otomatis."
+  },
+  {
+    "name": "Gaming Fullscreen Workflow",
+    "trigger": { "fullscreen": true, "detectedActivity": "Gaming" },
+    "conditions": { "gpuUsageGreaterThan": 60 },
+    "actions": ["setFanPerformance", "pauseBackgroundCleanup", "showNotification"],
+    "cooldownSeconds": 300,
+    "notification": "Gaming profile aktif. Cleanup background dipause."
+  },
+  {
+    "name": "Battery Saver Workflow",
+    "trigger": { "detectedActivity": "Battery Saver" },
+    "conditions": { "batteryState": "discharging" },
+    "actions": ["setFanStandard", "setSSDPowerSaving", "showNotification"],
+    "cooldownSeconds": 300,
+    "notification": "Battery Saver aktif. Mode sistem dibuat lebih hemat."
+  },
+  {
+    "name": "Performance Cooling Override",
+    "trigger": { "detectedActivity": "Heavy Workload" },
+    "conditions": { "cpuTempGreaterThan": 85 },
+    "actions": ["setFanPerformance", "showNotification"],
+    "cooldownSeconds": 180,
+    "notification": "CPU panas. Performance Cooling override aktif."
+  }
+]
